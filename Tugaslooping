@@ -1,16 +1,115 @@
-public class Segitigasikuangka {
-    
-    public static void main(String[] args) {
-        int a,b;
-        for (a = 5; a >=0; a--) {
-           //outer loop
-            System.out.println();
-            //Memberi garis baru atau enter
-  
-            for (b = 5; b > a; b--) {
-                //inner loop
-                System.out.print(b + " ");
-                //menampilkan bintang pada output  
-            }
+function createSquareCrossZero() {
+  var row = ""
+
+  function isEven(num) {
+    return num % 2 === 0
+  }
+
+  for (let rowIndex = 1; rowIndex <= 5; rowIndex++) {
+    for (let colIndex = 1; colIndex <= 5; colIndex++) {
+      if (isEven(colIndex)) {
+        row += "X "
+      } else {
+        row += "0 "
+      }
+    }
+    console.log(row)
+    row = ""
+  };
+}
+
+function createSquareCrossZero2() {
+  var row = ""
+
+  function isEven(num) {
+    return num % 2 === 0
+  }
+
+  for (let rowIndex = 1; rowIndex <= 5; rowIndex++) {
+    for (let colIndex = 1; colIndex <= 5; colIndex++) {
+      switch(true) {
+        case isEven(rowIndex) && isEven(colIndex): {
+          row += "X "
+          break;
         }
-    }  
+        case !isEven(rowIndex) && isEven(colIndex): {
+          row += "0 "
+          break;
+        }
+        case isEven(rowIndex) && !isEven(colIndex): {
+          row += "0 "
+          break;
+        }
+        default:
+          row += "X "
+          break;
+      }
+    }
+    console.log(row)
+    row = ""
+  };
+}
+
+function createTriangle1() {
+  var row = ""
+
+  for (let rowIndex = 1; rowIndex <= 5; rowIndex++) {
+    for (let colIndex = 1; colIndex <= 6 - rowIndex; colIndex++) {
+      if (rowIndex < 3) {
+        row += rowIndex + " "
+      } else {
+        row += "3 "
+      }
+    }
+    console.log(row)
+    row = ""
+  };
+}
+
+function createTriangle2() {
+  var row = ""
+  
+  for (let rowIndex = 1; rowIndex <= 5; rowIndex++) {
+    for (let colIndex = rowIndex; colIndex <= 5; colIndex++) {
+      row += colIndex + " "
+    }
+    console.log(row)
+    row = ""
+  };
+}
+
+function createTriangle3() {
+  var leftSide = ""
+  var rightSide = ""
+
+  for (let rowIndex = 1; rowIndex <= 5; rowIndex++) {
+    // menambahkan spasi
+    for (let colIndex = 1; colIndex < rowIndex; colIndex++) {
+      leftSide += "  "
+    }
+    
+    for (let colIndex = 5; colIndex >= rowIndex; colIndex--) {     
+      leftSide += colIndex + " "
+    }
+
+    for (let colIndex = rowIndex + 1; colIndex <= 5; colIndex++) {   
+      rightSide += colIndex + " "
+    }
+
+    console.log(leftSide + rightSide)
+    leftSide = ""
+    rightSide = ""
+  };
+}
+
+
+createSquareCrossZero()
+console.log("")
+createSquareCrossZero2()
+console.log("")
+createTriangle1()
+console.log("")
+createTriangle2()
+console.log("")
+createTriangle3()
+createTriangle3()
