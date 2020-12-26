@@ -1,1 +1,16 @@
-
+public class Segitigasikuangka {
+    
+    public static void main(String[] args) {
+        int a,b;
+        for (a = 5; a >=0; a--) {
+           //outer loop
+            System.out.println();
+            //Memberi garis baru atau enter
+  
+            for (b = 5; b > a; b--) {
+                //inner loop
+                System.out.print(b + " ");
+                //menampilkan bintang pada output  
+            }
+        }
+    }  
